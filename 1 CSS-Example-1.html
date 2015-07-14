@@ -12,7 +12,6 @@
             list-style-type: none;
             padding: 0;
             border: 1px solid gray;
-            overflow: auto;
 
             background-color: #eee;
         }
@@ -21,6 +20,8 @@
             float: left;
             padding: 0.35em 0.5em;
             background-color: #eee;
+
+            position: relative;
         }
 
         ul.menu > li:hover {
@@ -41,15 +42,26 @@
         }
 
         ul.submenu {
-            padding-left: 0.5em;
+            width: 100%;
+            padding: 0.5em 0.75em;
             list-style-type: none;
             font-size: 0.85em;
+            background-color: #ddd;
 
             display: none;
+            position: absolute;
+
+            top: 100%;
         }
 
         ul.menu > li:hover > ul.submenu {
             display: block;
+        }
+
+        ul.menu > li.clearfix-base {
+            float: none;
+            clear: both;
+            padding: 0
         }
 
     </style>
@@ -68,6 +80,7 @@
                 </ul>
             </li>
             <li class="right">Login</li>
+            <li class="clearfix-base"></li>
         </ul>
     </nav>
 

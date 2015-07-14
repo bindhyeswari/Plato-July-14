@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="base.css"/>
+    <style>
+
+        body > div {
+            height: 300px;
+            background-color: red;
+            width: 50%;
+            float: left;
+            color: white;
+
+            padding: 1em;
+            box-sizing: border-box; /* css3 fix */
+        }
+
+        body > div.last {
+            background-color: darkred;
+
+            position: relative;
+        }
+
+        div.label {
+            width: 50%;
+            padding: 0.5em;
+            border: 1px solid white;
+
+            position: absolute;
+            bottom: 20px;
+            left: 25%;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+<div>
+    Natalie
+</div>
+<div class="last">
+    Likhita
+    <div class="label">Some content</div>
+</div>
+
+</body>
+</html>
