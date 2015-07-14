@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="base.css"/>
+    <title>Document</title>
+    <style>
+
+        /* CSS Dropdown */
+
+        ul.menu {
+            list-style-type: none;
+            padding: 0;
+            border: 1px solid gray;
+            overflow: auto;
+
+            background-color: #eee;
+        }
+
+        ul.menu > li { /* 0 0 1 2 */
+            float: left;
+            padding: 0.35em 0.5em;
+            background-color: #eee;
+        }
+
+        ul.menu > li:hover {
+            cursor: pointer;
+            background-color: #ddd;
+            /*css 3*/
+            transition: background-color 500ms ease;
+        }
+
+        ul.menu > li.right { /* 0 0 2 2 */
+            float: right;
+            color: #eee;
+        }
+
+        ul.menu > li.right:hover {
+            color: black;
+            transition: color 1s ease;
+        }
+
+        ul.submenu {
+            padding-left: 0.5em;
+            list-style-type: none;
+            font-size: 0.85em;
+
+            display: none;
+        }
+
+        ul.menu > li:hover > ul.submenu {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul class="menu">
+            <li>Home</li>
+            <li>
+                <div>Types of Developers</div>
+                <ul class="submenu">
+                    <li>UI Developers</li>
+                    <li>Node Developers</li>
+                    <li>MongoDB Devs</li>
+                </ul>
+            </li>
+            <li class="right">Login</li>
+        </ul>
+    </nav>
+
+</body>
+</html>

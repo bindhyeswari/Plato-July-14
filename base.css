@@ -1,0 +1,31 @@
+body {
+    font: 200 1em 'Helvetica Neue', 'Segoe UI', 'Droid Sans', 'Helvetica';
+    padding: 3em;
+    margin: 0;
+}
+
+input, select, textarea, button, .button {
+    font: 200 1em 'Helvetica Neue', 'Segoe UI', 'Droid Sans', 'Helvetica';
+    outline: none;
+    border: 1px solid #eee;
+    padding: 0.35em 0.5em;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 0.35em 0.5em;
+}
+
+.panel {
+    padding: 1em;
+    background-color: #eee;
+    margin: 1em;
+}
+
+button, input[type="submit"] {
+    border-radius: 0.3em;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #777;
+    color: white;
+    transition: all 150ms ease;
+    cursor: pointer;
+}
