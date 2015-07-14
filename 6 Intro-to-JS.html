@@ -30,13 +30,48 @@
     </style>
     <script>
 
+
         // DOMContentLoaded
         document.addEventListener('DOMContentLoaded', function () {
 
             var div = document.getElementById('instr');
             // div.style.backgroundColor = 'red';
 
+            var ball = document.querySelector('div.ball');
+            console.log(ball);
+            var xtop = 10;
+
+            function move() {
+                xtop++;
+                // console.log(xtop);
+                ball.style.top = xtop + 'px'; // 11 + 'px' = '11px'
+            }
+
+
+            var intervalid = setInterval(move, 10);
+            console.log(intervalid);
+
+            ball.addEventListener('click', function () {
+                clearInterval(intervalid);
+            });
+
+
+
         });
+
+        function sum(x, y) { // function declaration
+            return x + y;
+        }
+
+        sum.data = 'some information';
+        console.log(sum.data);
+
+        console.log(sum(120, 11)); // function invocation
+        setInterval(sum, 100);
+
+
+
+
 
         /*var i = 0;
         setInterval(function () {
