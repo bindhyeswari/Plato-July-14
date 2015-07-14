@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="base.css"/>
+    <style>
+
+        body > div {
+            height: 300px;
+            background-color: red;
+            width: 50%;
+            float: left;
+            color: white;
+
+            padding: 1em;
+            box-sizing: border-box; /* css3 fix */
+        }
+
+        body > div.last {
+            background-color: darkred;
+
+            position: relative;
+        }
+
+        div.label {
+            width: 50%;
+            padding: 0.5em;
+            border: 1px solid white;
+            /*margin: -60px auto 0;*/
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: -60px;
+        }
+
+        div.wrapper {
+            min-height: 100%;
+            background-color: green;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+<div>
+    Natalie
+</div>
+<div class="last">
+    <div class="wrapper"></div>
+    <div class="label">some content</div>
+</div>
+
+</body>
+</html>
