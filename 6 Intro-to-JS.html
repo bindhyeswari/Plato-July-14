@@ -38,23 +38,55 @@
             // div.style.backgroundColor = 'red';
 
             var ball = document.querySelector('div.ball');
+            var box = document.querySelector('div.box');
             console.log(ball);
             var xtop = 10;
 
-            function move() {
-                xtop++;
-                // console.log(xtop);
-                ball.style.top = xtop + 'px'; // 11 + 'px' = '11px'
-            }
 
 
-            var intervalid = setInterval(move, 10);
-            console.log(intervalid);
 
-            ball.addEventListener('click', function () {
-                clearInterval(intervalid);
+            var intervalid; // this will keep track of the interval id
+            var moving = false; // this boolean will indicate whether the ball is moving
+
+            box.addEventListener('click', function () {
+                if (moving) {
+                    // code to execute if the ball is moving
+                    if (intervalid) clearInterval(intervalid); // check if the intervalid is not undefined
+                    moving = false; // update the correct state
+                } else {
+                    // code to execute if the ball is stopped
+                    intervalid = setInterval(move, 1); // get the ball moving
+                    moving = true; // set the correct state
+                }
             });
 
+
+            var downwards = true, bottom_datum = 280, top_datum = 10;
+            function move() {
+
+                if (downwards) {
+                    // moving downwards
+                    xtop++;
+                    if (xtop === bottom_datum) {
+                        top_datum += 30;
+                        if (top_datum === bottom_datum) clearInterval(intervalid);
+                        downwards = false;
+                    } else {
+                        ball.style.top = xtop + 'px';
+                    }
+                } else {
+                    // moving upwards
+                    xtop--;
+                    if (xtop === top_datum) {
+                        downwards = true;
+                    } else {
+                        ball.style.top = xtop + 'px';
+                    }
+                }
+
+                // console.log(xtop);
+                // 11 + 'px' = '11px'
+            }
 
 
         });
@@ -68,6 +100,14 @@
 
         console.log(sum(120, 11)); // function invocation
         setInterval(sum, 100);
+
+        try {
+            console.log(a);
+        } catch(ex) {
+            console.log(ex);
+        } finally {
+            console.log('operation complete .. ');
+        }
 
 
 
